@@ -1,0 +1,219 @@
+/* ===== Shell / navegación unificada =====
+   Sistema spec-sheet: hairlines (no sombras), línea ámbar de
+   estructura en el header, un solo radius, iconos Tabler teal. */
+.bz-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  height: 64px;
+  padding: 0 var(--sp-2);
+  background: var(--surface);
+  border-bottom: 2px solid var(--hivis);
+}
+
+.bz-nav__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+  flex-shrink: 0;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.bz-nav__brand-icon {
+  color: var(--hivis);
+  padding: 1px 2px 3px;
+  border: 1.75px solid var(--hivis);
+  border-radius: 50%;
+  background: transparent;
+  box-sizing: content-box;
+}
+
+.bz-nav__brand-text {
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .bz-nav__brand-text { display: none; }
+}
+
+.bz-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: auto;
+  overflow-x: auto;
+}
+
+.bz-nav__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--text-2);
+  font-weight: 500;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.bz-nav__link-icon {
+  display: inline-flex;
+  color: var(--text-3);
+  transition: color 0.12s ease;
+}
+
+.bz-nav__link:hover {
+  background: var(--surface-2);
+  color: var(--ink);
+}
+.bz-nav__link:hover .bz-nav__link-icon { color: var(--teal); }
+
+.bz-nav__link.is-active {
+  background: var(--warn-bg);
+  color: var(--hivis-press);
+}
+.bz-nav__link.is-active .bz-nav__link-icon { color: var(--hivis-press); }
+
+/* módulos sólo disponibles en la app interna: visibles pero inertes */
+.bz-nav__link.is-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.bz-nav__link.is-disabled:hover {
+  background: transparent;
+  color: var(--text-2);
+}
+.bz-nav__link.is-disabled:hover .bz-nav__link-icon { color: var(--text-3); }
+
+@media (max-width: 600px) {
+  .bz-nav {
+    gap: var(--sp-1);
+    padding: 0 var(--sp-1);
+  }
+  .bz-nav__link-text {
+    display: none;
+  }
+}
+
+.bz-main {
+  min-height: calc(100vh - 64px);
+}
+
+/* ===== Home ===== */
+.bz-home {
+  padding-top: var(--sp-4);
+  padding-bottom: var(--sp-4);
+}
+
+.bz-home__eyebrow {
+  margin: 0 0 var(--sp-1);
+}
+
+.bz-home__title {
+  font-size: 28px;
+  margin: 0 0 4px;
+}
+
+.bz-home__subtitle {
+  color: var(--text-2);
+  font-size: 15px;
+  margin: 0 0 var(--sp-4);
+}
+
+.bz-home__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-2);
+}
+
+@media (max-width: 760px) {
+  .bz-home__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .bz-home__grid { grid-template-columns: 1fr; }
+}
+
+.bz-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-1);
+  padding: var(--sp-3);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-sans);
+  transition: border-color 0.12s ease, background-color 0.12s ease;
+}
+
+.bz-card:hover {
+  border-color: var(--hivis);
+  background: var(--surface);
+}
+
+.bz-card__icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 4px;
+  border: 0.5px solid var(--teal);
+  border-radius: var(--radius);
+  color: var(--teal);
+  background: var(--surface-2);
+}
+
+.bz-card__name {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.bz-card__desc {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.45;
+}
+
+.bz-card__go {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: var(--sp-1);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  transition: color 0.12s ease, gap 0.12s ease;
+}
+.bz-card:hover .bz-card__go {
+  color: var(--hivis-press);
+  gap: 8px;
+}
+
+/* tarjetas de módulos no incluidos en el showcase */
+.bz-card.is-disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+.bz-card.is-disabled:hover {
+  border-color: var(--border);
+}
+.bz-card.is-disabled:hover .bz-card__go {
+  color: var(--text-3);
+  gap: 4px;
+}

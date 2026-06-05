@@ -1,0 +1,50 @@
+/* ============================================================
+   Bronzen — Design tokens
+   Sistema: spec-sheet logístico. Un solo radius, un solo grosor
+   de borde, escala de espaciado de 8px, dos pesos de tipografía.
+   ============================================================ */
+
+:root {
+  /* neutros — concreto / acero */
+  --bg:            #F2F1EC;  /* fondo página (no blanco puro) */
+  --surface:       #FFFFFF;  /* cards, paneles */
+  --surface-2:     #FAF9F6;  /* zonas hundidas, inputs */
+  --border:        #E4E2DB;  /* hairline sutil (default) */
+  --border-strong: #CDCBC2;  /* divisiones marcadas */
+  --ink:           #23231F;  /* texto principal */
+  --text-2:        #5E5D58;  /* secundario */
+  --text-3:        #908E86;  /* terciario / labels mono */
+
+  /* acentos */
+  --hivis:         #EF9F27;  /* ámbar hi-vis: acción + estructura */
+  --hivis-press:   #D4870F;
+  --teal:          #1D9E75;  /* marca / íconos / "disponible" */
+  --teal-press:    #0F6E56;
+  --purple:        #7F77DD;  /* secundario opcional, 2do dato-acento */
+
+  /* semáforo / estados (Stock y status) */
+  --ok:   #1D9E75;  --ok-bg:   #E1F5EE;  --ok-ink:   #0F6E56;
+  --warn: #EF9F27;  --warn-bg: #FAEEDA;  --warn-ink: #854F0B;
+  --bad:  #D85A30;  --bad-bg:  #FAECE7;  --bad-ink:  #993C1D;
+
+  /* sistema */
+  --radius: 8px;
+  --radius-card: 10px;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'IBM Plex Mono', monospace;
+
+  /* escala de espaciado 8px */
+  --sp-1: 8px;
+  --sp-2: 16px;
+  --sp-3: 24px;
+  --sp-4: 32px;
+
+  /* layout */
+  --container: 1100px;
+}
+
+.dark {
+  --bg:#161716; --surface:#1F211F; --surface-2:#262825;
+  --border:rgba(255,255,255,.10); --border-strong:rgba(255,255,255,.18);
+  --ink:#ECEAE3; --text-2:#A9A79F; --text-3:#7C7A73;
+}

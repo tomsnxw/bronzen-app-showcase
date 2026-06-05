@@ -1,0 +1,280 @@
+.m-pallet {
+  &__subtitle {
+    color: var(--text-2);
+    font-size: 14px;
+    margin: 0 0 var(--sp-2);
+  }
+
+  &__mt { margin-top: var(--sp-2); }
+  &__mb { margin-bottom: var(--sp-2); }
+
+  /* ----- tabs ----- */
+  &__tabs {
+    display: flex;
+    gap: var(--sp-1);
+    margin: var(--sp-2) 0 var(--sp-2);
+    border-bottom: 1px solid var(--border);
+  }
+  &__tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    color: var(--text-2);
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    padding: 10px 14px;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.12s ease, border-color 0.12s ease;
+    &:hover { color: var(--ink); }
+    &.is-active {
+      color: var(--hivis-press);
+      border-bottom-color: var(--hivis);
+    }
+  }
+
+  /* ----- acciones de carga ----- */
+  &__actions {
+    display: flex;
+    gap: var(--sp-1);
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--sp-2);
+  }
+  &__file {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  &__tip { margin-bottom: var(--sp-2); }
+
+  /* ----- atajo "cargar ejemplo" ----- */
+  &__example {
+    margin: 0 0 var(--sp-2);
+    font-size: 13px;
+    color: var(--text-2);
+  }
+  &__example-link {
+    border: none;
+    background: none;
+    padding: 0;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--teal);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    &:hover { color: var(--teal-press); }
+    &:disabled { opacity: .5; cursor: not-allowed; }
+  }
+
+  /* ----- previews ----- */
+  &__preview-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--sp-1);
+    margin-bottom: var(--sp-1);
+  }
+  &__preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: var(--sp-1);
+    margin-bottom: var(--sp-2);
+  }
+  &__preview-item {
+    position: relative;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 6px;
+    text-align: center;
+    background: var(--surface);
+  }
+  &__remove {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(35, 35, 31, 0.6);
+    color: #fff;
+    cursor: pointer;
+    padding: 0;
+    z-index: 2;
+    &:hover { background: var(--bad); }
+  }
+  &__preview-img {
+    max-width: 100%;
+    max-height: 140px;
+    border-radius: 6px;
+    object-fit: contain;
+  }
+  &__preview-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-3);
+    margin-top: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__error-list {
+    margin: 6px 0 0 18px;
+    font-size: 13px;
+  }
+
+  /* ----- resultados ----- */
+  &__results { margin-top: var(--sp-3); }
+
+  &__summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--sp-1);
+    padding: 12px var(--sp-2);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: var(--sp-2);
+  }
+  &__summary-text { font-size: 14px; color: var(--ink); }
+  &__summary-actions {
+    display: flex;
+    gap: var(--sp-1);
+    flex-wrap: wrap;
+  }
+
+  /* ----- bloque de pallet ----- */
+  &__block {
+    padding: var(--sp-2);
+    margin-bottom: var(--sp-2);
+  }
+  &__block-title {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--sp-1);
+    font-size: 16px;
+    margin-bottom: var(--sp-1);
+  }
+  &__img-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-3);
+  }
+  &__empty-items { color: var(--text-3); font-size: 14px; }
+  &__total {
+    display: block;
+    margin-top: var(--sp-1);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-3);
+  }
+
+  /* ----- búsqueda ----- */
+  &__search-form {
+    display: flex;
+    gap: var(--sp-1);
+    flex-wrap: wrap;
+    margin-bottom: var(--sp-2);
+  }
+  &__search-wrap {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+  }
+  &__search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-3);
+    pointer-events: none;
+    z-index: 1;
+  }
+  &__search-input { padding-left: 38px; }
+
+  &__suggest {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 4px;
+    list-style: none;
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    max-height: 260px;
+    overflow-y: auto;
+    z-index: 20;
+  }
+  &__suggest-item {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-1);
+    padding: 8px 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    color: var(--text-3);
+    &:hover { background: var(--surface-2); }
+  }
+  &__suggest-text {
+    color: var(--text-2);
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    strong { color: var(--ink); }
+  }
+
+  /* ----- chips de pallets encontrados ----- */
+  &__chips {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: var(--sp-1);
+  }
+  &__chip-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--teal);
+    border-radius: var(--radius);
+    padding: 12px var(--sp-2);
+    background: var(--surface);
+  }
+  &__chip-num {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  &__chip-qty {
+    font-size: 12px;
+    color: var(--text-2);
+  }
+}
