@@ -208,7 +208,7 @@ manager into the operational toolkit of the team.
 **Tomás Rodrigo Sitta**
 AI Product Builder | FullStack Developer | Designer
 
-[LinkedIn](https://linkedin.com/in/tomas-sitta) · [Portfolio](https://tomassitta.com) · [Behance](https://behance.net/tomsrsitta) · [Email](mailto:410toms@gmail.com)
+[LinkedIn](https://linkedin.com/in/tomas-sitta) · [Portfolio](https://tomasrodrigositta.web.app) · [Behance](https://behance.net/tomsrsitta) · [Email](mailto:410toms@gmail.com)
 
 ---
 
