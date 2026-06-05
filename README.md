@@ -5,7 +5,7 @@
 > paper delivery sheets — into structured outputs. Used daily by 10–20 employees.
 
 **Live**: [bronzen-app.web.app](https://bronzen-app.web.app) *(internal tool, demo access on request)*
-**Portfolio case study**: [tomassitta.com/#bronzen](https://tomassitta.com)
+**Portfolio case study**: [tomasrodrigositta.web.app](https://tomasrodrigositta.web.app/)
 
 ![Bronzen-app home](docs/screenshots/home.png)
 
