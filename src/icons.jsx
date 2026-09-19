@@ -7,6 +7,7 @@ import {
   IconPackages,
   IconStack2,
   IconRoute,
+  IconHourglass,
   IconUpload,
   IconSearch,
   IconSearchOff,
@@ -20,6 +21,7 @@ import {
   IconArrowRight,
   IconInfoCircle,
   IconBuildingWarehouse,
+  IconMessage,
 } from "@tabler/icons-react";
 
 const defaults = { stroke: 1.5 };
@@ -34,6 +36,7 @@ export const Icon = {
   Stock:        make(IconPackages),
   Pallets:      make(IconStack2),
   Remitos:      make(IconRoute),
+  Pendientes:   make(IconHourglass),
 
   // acciones
   Cargar:       make(IconUpload),
@@ -44,6 +47,7 @@ export const Icon = {
   Cerrar:       make(IconX),
   Guardado:     make(IconCheck),
   Flecha:       make(IconArrowRight),
+  Mensaje:      make(IconMessage),
 
   // estados / ayuda
   Tip:          make(IconBulb),

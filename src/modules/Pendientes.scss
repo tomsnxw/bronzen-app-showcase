@@ -1,0 +1,356 @@
+.m-pnd {
+  /* ----- stepper ----- */
+  &__stepper {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--sp-3);
+  }
+  &__step {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-1);
+    color: var(--text-3);
+    &.is-active { color: var(--ink); }
+    &.is-done { color: var(--teal); }
+  }
+  &__step-n {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--border-strong);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  &__step.is-active &__step-n {
+    border-color: var(--hivis);
+    background: var(--hivis);
+    color: #fff;
+  }
+  &__step.is-done &__step-n {
+    border-color: var(--teal);
+    color: var(--teal);
+  }
+  &__step-label {
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  &__step-line {
+    width: 32px;
+    height: 1px;
+    background: var(--border-strong);
+    margin: 0 var(--sp-1);
+  }
+
+  /* ----- paso 1: dropzone ----- */
+  &__dropzone {
+    border: 2px dashed var(--border-strong);
+    border-radius: var(--radius-card);
+    background: var(--surface);
+    padding: var(--sp-4) var(--sp-2);
+    text-align: center;
+    transition: border-color 0.12s ease, background-color 0.12s ease;
+    &.is-dragover {
+      border-color: var(--hivis);
+      background: var(--surface-2);
+    }
+  }
+  &__dropzone-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sp-1);
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    color: var(--text-2);
+    &:disabled { cursor: default; opacity: 0.75; }
+  }
+  &__dropzone-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  &__dropzone-sub {
+    font-size: 13px;
+    color: var(--text-3);
+  }
+
+  /* ----- leyenda de conteos ----- */
+  &__leyenda {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--sp-1);
+    margin-bottom: var(--sp-1);
+  }
+  &__leyenda-total {
+    font-size: 12px;
+    color: var(--text-3);
+    margin-left: 4px;
+  }
+
+  /* ----- paso 2: tabla ----- */
+  &__table-wrap { overflow-x: auto; margin-bottom: var(--sp-2); }
+  &__col-cant { width: 160px; white-space: nowrap; }
+  &__col-check { width: 48px; padding-left: var(--sp-2) !important; }
+  &__col-msg { width: 56px; text-align: right; padding-right: var(--sp-2) !important; }
+  &__msg-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--text-2);
+    cursor: pointer;
+    &:hover { background: var(--surface-2); color: var(--ink); }
+  }
+  &__row.is-clickable { cursor: pointer; }
+  &__row.is-clickable:hover td { background: var(--surface-2); }
+  &__row.is-excluido { opacity: 0.55; }
+  &__cliente-nombre { font-weight: 600; }
+  &__cliente-tel { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+
+  &__check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border-strong);
+    background: var(--surface);
+    color: #fff;
+    cursor: pointer;
+    padding: 0;
+
+    /* el borde siempre marca el estado del cliente, tildado o no */
+    &--ok   { border-color: var(--teal); }
+    &--warn { border-color: var(--warn); }
+    &--bad  { border-color: var(--bad); }
+
+    &.is-on {
+      background: var(--teal);
+      border-color: var(--teal);
+    }
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+  }
+
+  &__row-detalle td {
+    background: var(--surface-2);
+    padding: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  &__resolver {
+    padding: var(--sp-2);
+    p { margin: 0 0 var(--sp-1); font-size: 13px; color: var(--text-2); }
+  }
+  &__resolver-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-1);
+  }
+  &__resolver-input {
+    flex: 1;
+    min-width: 180px;
+    padding: 9px 12px;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+  }
+  &__resolver-error {
+    color: var(--bad-ink);
+    font-size: 13px;
+    margin-top: var(--sp-1);
+  }
+  &__resolver-actual {
+    font-size: 12px;
+    color: var(--text-3);
+    margin: -4px 0 var(--sp-1);
+  }
+
+  &__coincidencias {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: var(--sp-1);
+  }
+  &__coincidencia {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--sp-1);
+    padding: 8px 12px;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    background: var(--surface);
+    cursor: pointer;
+    text-align: left;
+    &:hover { border-color: var(--hivis); background: var(--surface-2); }
+    &:disabled { opacity: 0.5; cursor: not-allowed; }
+    /* la coincidencia elegida se queda marcada — mismo look que el hover,
+       para que al volver a abrir el panel se vea cuál se usó */
+    &.is-selected {
+      border-color: var(--hivis);
+      background: var(--surface-2);
+      box-shadow: inset 0 0 0 1px var(--hivis);
+    }
+  }
+  &__coincidencia-nombre { font-weight: 600; font-size: 13px; }
+  &__coincidencia-meta { font-size: 11px; color: var(--text-3); }
+
+  &__resumen {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--sp-1);
+    p { margin: 0; font-size: 13px; color: var(--text-2); }
+  }
+
+  /* ----- paso 3: confirmar ----- */
+  &__confirmar { display: flex; flex-direction: column; gap: var(--sp-2); }
+  &__loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sp-2);
+    padding: var(--sp-4) 0;
+  }
+  &__spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid var(--border-strong);
+    border-top-color: var(--hivis);
+    border-radius: 50%;
+    animation: m-pnd-spin 0.8s linear infinite;
+  }
+  &__resumen-final h2 { font-size: 18px; margin: 0 0 4px; }
+  &__resumen-final-nota { font-size: 12px; color: var(--text-3); margin: 0 0 var(--sp-1); }
+  &__motivo { font-size: 11px; color: var(--text-3); margin: 4px 0 0; }
+
+  /* ----- modal de vista previa del mensaje ----- */
+  &__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(35, 35, 31, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--sp-2);
+    z-index: 1000;
+    animation: m-pnd-overlay-in 0.16s ease;
+
+    // el JS espera 160ms antes de sacar el modal del DOM — tiene que
+    // coincidir con esta duración (ver cerrarPreview en el .jsx).
+    &.is-closing { animation: m-pnd-overlay-out 0.16s ease forwards; }
+  }
+  &__preview-modal {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    max-height: 82vh;
+    overflow-y: auto;
+    animation: m-pnd-modal-in 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  &__overlay.is-closing &__preview-modal {
+    animation: m-pnd-modal-out 0.16s ease forwards;
+  }
+
+  // Botón de cerrar del popup de vista previa — único para este modal
+  // (no toca .bz-btn / .bz-btn--icon globales). Editá acá su POSICIÓN
+  // (top/right) y TAMAÑO (width/height).
+  &__preview-cerrar {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--text-2);
+    cursor: pointer;
+    &:hover { background: var(--surface-2); color: var(--ink); }
+  }
+  &__modal-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--sp-2);
+    padding-bottom: var(--sp-2);
+    margin-bottom: var(--sp-2);
+    border-bottom: 1px solid var(--border-strong);
+  }
+  &__modal-cliente { font-weight: 600; margin: 2px 0 0; }
+
+  /* Fondo claro tipo chat de WhatsApp (wallpaper con doodles), para que la
+     burbuja se lea igual que en el teléfono del cliente — colores fijos (no
+     tokens de tema) a propósito, es una vista previa, no parte del sistema. */
+  &__whatsapp-bg {
+    background: #fff url("../assets/whatsapp-bg.jpg") center / 260px repeat;
+    border-radius: var(--radius);
+    padding: 20px 14px;
+  }
+  &__whatsapp-bubble {
+    position: relative;
+    max-width: 88%;
+    background: #fff;
+    color: #111b21;
+    padding: 8px 10px 20px;
+    border-radius: 0 8px 8px 8px;
+    font-size: 14.2px;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  }
+  &__whatsapp-hora {
+    position: absolute;
+    bottom: 6px;
+    right: 10px;
+    font-size: 11px;
+    color: #8b9096;
+  }
+}
+
+@keyframes m-pnd-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes m-pnd-overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes m-pnd-overlay-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes m-pnd-modal-in {
+  from { opacity: 0; transform: scale(0.96) translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes m-pnd-modal-out {
+  from { opacity: 1; transform: none; }
+  to { opacity: 0; transform: scale(0.96) translateY(6px); }
+}

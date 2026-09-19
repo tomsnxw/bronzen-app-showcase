@@ -9,10 +9,11 @@ import {
 import "./App.scss";
 import { Icon } from "./icons";
 import Pallet from "./modules/Pallet";
+import Pendientes from "./modules/Pendientes";
 
 /* Catálogo completo de la suite. En la app interna real los seis módulos
-   están habilitados; este showcase deja navegable SÓLO el Lector de Pallets
-   (el resto se muestra atenuado para lucir el sistema de diseño). */
+   están habilitados; este showcase deja navegables el Lector de Pallets y
+   Pendientes (el resto se muestra atenuado para lucir el sistema de diseño). */
 const MODULOS = [
   {
     path: "/faltantes",
@@ -41,6 +42,13 @@ const MODULOS = [
     Icono: Icon.Pallets,
     descripcion: "Leé planillas de pallets y buscá un código.",
     Componente: Pallet,
+  },
+  {
+    path: "/pendientes",
+    nombre: "Pendientes",
+    Icono: Icon.Pendientes,
+    descripcion: "Avisá por WhatsApp la mercadería pendiente que llegó.",
+    Componente: Pendientes,
   },
   {
     path: "/remitos",
@@ -95,7 +103,7 @@ function Home() {
   const navigate = useNavigate();
   return (
     <div className="bz-home bz-container">
-      <p className="bz-eyebrow bz-home__eyebrow">Rojas + Ezeiza · 5 tools</p>
+      <p className="bz-eyebrow bz-home__eyebrow">Rojas + Ezeiza · 6 tools</p>
       <h1 className="bz-home__title">Herramientas Bronzen</h1>
       <p className="bz-home__subtitle">Elegí una herramienta para empezar.</p>
       <div className="bz-home__grid">
@@ -135,6 +143,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pallet" element={<Pallet />} />
+          <Route path="/pendientes" element={<Pendientes />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
