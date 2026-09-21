@@ -43,10 +43,15 @@ printed packing slips, paper delivery receipts. The opportunity I kept finding
 was the same — wherever there was a manual step between paper and Excel, an AI
 vision model could compress it into seconds.
 
-It started in November 2024 with a single tool, **Remitos**, a delivery-note
+It started in November 2025 with a single tool, **Remitos**, a delivery-note
 reader that turned a stack of paper receipts into an optimized route. From there
 it kept growing — each new tool added in response to a specific pain point raised
 by the warehouse manager. Six tools later, it's used daily by ~10–20 employees.
+
+The toolkit now also has a proper **login with roles** (client / salesperson /
+admin, each seeing a different slice of the app) and ships as a **native
+Android app** (via Capacitor), on top of the web version. Neither is part of
+this trimmed-down showcase.
 
 ---
 
@@ -268,7 +273,7 @@ secrets or services required.
 ## Project status
 
 Bronzen-app has been in active production use by the warehouse team since November
-2024 and keeps growing — new modules ship as new pain points emerge.
+2025 and keeps growing — new modules ship as new pain points emerge.
 
 Built solely by **Tomás Rodrigo Sitta**, from a personal request by the warehouse
 manager into the operational toolkit of the team.
